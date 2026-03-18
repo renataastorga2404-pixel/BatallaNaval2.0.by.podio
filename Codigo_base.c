@@ -38,8 +38,8 @@ int main()
     }
     // Colocar barcos manualmente
     tablero[1][2] = 1;
-    tablero[3][4] = 1;
-    tablero[0][0] = 1;
+    tablero[3][4] = 4;
+    tablero[0][0] = 5;
 
     do{
     // Pedir disparo
@@ -52,7 +52,21 @@ int main()
         scanf("%d", &columna);
 
         if(tablero[fila][columna] == 1){
-            printf("Has disparado al barco %i!\n", b_encontrado+1);
+            printf("%sha disparado a una fragata!\n", name1);
+            tablero[fila][columna] = 3;
+            tabc[fila][columna] = 'X';
+            b_total --;
+            b_encontrado ++;
+            tries ++;
+        }else if(tablero[fila][columna] == 4){
+            printf("%sha disparado a un Destructor!\n", name1);
+            tablero[fila][columna] = 3;
+            tabc[fila][columna] = 'X';
+            b_total --;
+            b_encontrado ++;
+            tries ++;
+        }else if(tablero[fila][columna] == 5){
+            printf("%sha disparado a un Submarino!\n", name1);
             tablero[fila][columna] = 3;
             tabc[fila][columna] = 'X';
             b_total --;

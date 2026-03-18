@@ -77,7 +77,7 @@ int main()
             tablero[fila][columna] = 2;
             tabc[fila][columna] = 'o';
             tries ++;
-        }else if(tablero[fila][columna] == 2){
+        }else if(tablero[fila][columna] == 2 || tablero[fila][columna] == 3){
             printf("Jaja Ya habias disparado aqui antes...");
         }
 

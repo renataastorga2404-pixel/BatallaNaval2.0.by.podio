@@ -52,21 +52,21 @@ int main()
         scanf("%d", &columna);
 
         if(tablero[fila][columna] == 1){
-            printf("%sha disparado a una fragata!\n", name1);
+            printf("%sha disparado a la Pinta!\n", name1);
             tablero[fila][columna] = 3;
             tabc[fila][columna] = 'X';
             b_total --;
             b_encontrado ++;
             tries ++;
         }else if(tablero[fila][columna] == 4){
-            printf("%sha disparado a un Destructor!\n", name1);
+            printf("%sha disparado a el Titanic!\n", name1);
             tablero[fila][columna] = 3;
             tabc[fila][columna] = 'X';
             b_total --;
             b_encontrado ++;
             tries ++;
         }else if(tablero[fila][columna] == 5){
-            printf("%sha disparado a un Submarino!\n", name1);
+            printf("%sha disparado a la Santa Maria!\n", name1);
             tablero[fila][columna] = 3;
             tabc[fila][columna] = 'X';
             b_total --;

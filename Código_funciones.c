@@ -83,7 +83,26 @@ void disparo(char name[20], int tablero[5][5], char tabc[5][5], int *tries, int 
 
     }
 }
+void archTablero(char ganador[20], int intentos, char tablero[5][5]){
+    FILE *archivo;
 
+    archivo = fopen("tablero.txt", "w");
+
+    fprintf(archivo, "Ganador: %s\n", ganador);
+    fprintf(archivo, "Intentos: %d\n", intentos);
+    fprintf(archivo, "Tablero final:\n");
+
+    for(int i = 0; i < 5; i++) {
+        for(int j = 0; j < 5; j++) {
+            fprintf(archivo, "%c ", tablero[i][j]);
+        }
+        fprintf(archivo, "\n");
+    }
+
+    fclose(archivo);
+
+
+}
 
 int main()
 {
@@ -125,19 +144,21 @@ int main()
     if(b_total1 == 0){
         printf("Felicidades %sHas ganado!!", name1);
         printf("\nTe tomo %i intentos encontrarlos.", tries1);
+
+        archTablero(name1, tries1, tabc2);
         break;
     }
     disparo(name2, tablero1, tabc1, &tries2, &b_total2, Barcosn);
     if(b_total2 == 0){
         printf("Felicidades %sHas ganado!!", name2);
         printf("\nTe tomo %i intentos encontrarlos.", tries2);
+
+        archTablero(name2, tries2, tabc1);
         break;
     }
 
 
     } while(1);
-
-
 
     return 0;
 }
